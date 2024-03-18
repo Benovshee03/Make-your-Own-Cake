@@ -1,9 +1,12 @@
 .container {
-  width: 90%;
+  max-width: 1440px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .header {
-  width: 100%;
+  width: 82%;
   height: 67px;
   display: flex;
   justify-content: space-between;
@@ -25,7 +28,9 @@
   width: 40%;
   height: 100%;
 }
-
+.mobileNav {
+  display: none;
+}
 .nav ul {
   width: 100%;
   display: flex;
@@ -58,8 +63,11 @@
   line-height: normal;
   letter-spacing: -7.92px;
 }
+.textMobile {
+  display: none;
+}
 .make {
-  width: 100%;
+  width: 82%;
   height: 521px;
   display: flex;
   justify-content: center;
@@ -72,6 +80,35 @@
   width: 780px;
   height: 521px;
   flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.cake_h1 {
+  width: 90%;
+  color: var(--Color-Text, #3b3737);
+  text-align: center;
+  font-family: Baskervville;
+  font-size: 130px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -7.92px;
+}
+.bottom_make {
+  position: absolute;
+  left: -8%;
+  bottom: 0;
+  transition: 1s;
+  cursor: pointer;
+}
+.bottom_make:hover {
+  scale: 1.1;
+  transform: rotate(360deg);
+}
+.bottom_make_mobile {
+  display: none;
 }
 .mobile-nav {
   display: none;
@@ -95,7 +132,7 @@
   line-height: 100%;
 }
 .flexCake {
-  width: 100%;
+  width: 82%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -107,7 +144,33 @@
   align-items: center;
   margin-bottom: 67px;
 }
+.box:hover {
+  border-radius: 8px;
+  background: #fffced;
+  box-shadow: 0px 5px 20px 0px rgba(98, 98, 98, 0.18);
+}
+.cover_button {
+  width: 100%;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+
+.hovered_button {
+  width: 103px;
+  height: 34px;
+  border-radius: 6px;
+  border: 1px solid #5d1609;
+  background: #ec6046;
+  cursor: pointer;
+  display: none;
+}
+.box:hover .hovered_button {
+  display: block;
+  transition: 150ms;
+}
 .box_image {
   width: 100%;
   display: flex;
@@ -115,7 +178,7 @@
   margin-bottom: 18px;
 }
 .box_image img {
-  width: 80%;
+  width: 82%;
   height: auto;
 }
 .cake_name {
@@ -131,7 +194,7 @@
   margin-bottom: 12px;
 }
 .cake_text {
-  width: 80%;
+  width: 82%;
   color: var(--Color-Caption-Text, #767676);
   text-align: center;
   font-family: Lato;
@@ -166,16 +229,102 @@
   height: 1px;
   background-color: black; /* Çizgi rengi */
 }
-@media only screen and (max-width: 320px) {
+.newProducts{
+  width: 82%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.newProducts .left{
+width: 50%;
+}
+.newProducts .left{
+  width: 50%;
+  }
+@media only screen and (max-width: 480px) {
   .container {
-    width: 320px;
+    max-width: 100%;
     margin: 0 auto;
+  }
+  .header {
+    width: 90%;
+    height: 67px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin-bottom: 60px;
   }
   .nav {
     display: none;
     list-style: none;
   }
+  .bottom_make {
+    display: none;
+  }
   .mobileNav {
     display: block;
+  }
+  .mobileNav ul {
+    display: flex;
+    list-style: none;
+    gap: 18px;
+    cursor: pointer;
+  }
+
+  .make {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .make__container {
+    width: 320px;
+    height: 214px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .text {
+    display: none;
+  }
+  .bottom_make_mobile {
+    display: block;
+    position: absolute;
+    left: 5%;
+    bottom: 2%;
+    transition: 1s;
+    cursor: pointer;
+  }
+  .bottom_make_mobile:hover {
+    scale: 1.2;
+    transform: rotate(360deg);
+  }
+  .cake_h1 {
+    color: #fff;
+    text-align: center;
+    font-family: Baskervville;
+    font-size: 33.336px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -2px;
+  }
+  .box {
+    width: calc(100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 67px;
+    cursor: pointer;
+  }
+  .expect h1 {
+    color: #000;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
   }
 }
